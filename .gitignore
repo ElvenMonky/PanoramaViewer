@@ -57,3 +57,11 @@ typings/
 # dotenv environment variables file
 .env
 
+/.vs
+*.map
+/app/component.js
+/app/main.js
+/app/module.js
+/bin
+/obj/Debug
+/package-lock.json
