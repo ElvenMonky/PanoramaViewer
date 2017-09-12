@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "outDir": "bin",
     "noImplicitAny": true,
     "suppressImplicitAnyIndexErrors": true,
     "module": "commonjs",
@@ -13,6 +14,7 @@
     "target": "es5"
   },
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "build"
   ]
 }

@@ -1,0 +1,9 @@
+﻿<div class="row">
+    <div class="left carousel-control" (click)="moveBack()" [ngClass]="isBackVisible()?show:hide" />
+    <div class="right carousel-control" (click)="moveNext()" [ngClass]="isBackVisible()?show:hide" />
+    <ul class="horizontal-slider">
+        <li class="col-md-3" *ngFor="let item of visibleItems" (click)="selectItem(item)" >
+            <img class="thumbnail" src="{{item.src}}" />
+        </li>
+    </ul>
+</div>

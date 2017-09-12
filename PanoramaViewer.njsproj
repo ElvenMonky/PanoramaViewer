@@ -6,7 +6,7 @@
     <ProjectGuid>{f1082218-e156-4a75-9ff7-60cb494d8583}</ProjectGuid>
     <ProjectHome />
     <ProjectView>ShowAllFiles</ProjectView>
-    <StartupFile />
+    <StartupFile>server\server.ts</StartupFile>
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
     <ProjectTypeGuids>{3AF33F2E-1136-4D97-BBB7-1795711AC8B8};{349c5851-65df-11da-9384-00065b846f21};{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}</ProjectTypeGuids>
@@ -19,7 +19,13 @@
   <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
   <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
   <ItemGroup>
-    <Content Include="index.html">
+    <Content Include="client\app\image-slider\style.css">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="client\app\image-slider\template.html">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="client\index.html">
       <SubType>Code</SubType>
     </Content>
     <Content Include="package.json">
@@ -31,21 +37,35 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="app\" />
+    <Folder Include="client\app\" />
+    <Folder Include="client\" />
+    <Folder Include="client\app\image-slider\" />
+    <Folder Include="server\" />
+    <Folder Include="server\controllers\" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="systemjs.config.js">
+    <Compile Include="client\systemjs.config.js">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Include="app\component.ts">
+    <TypeScriptCompile Include="client\app\component.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
-    <TypeScriptCompile Include="app\main.ts">
+    <TypeScriptCompile Include="client\app\image-slider\component.ts" />
+    <TypeScriptCompile Include="client\app\main.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
-    <TypeScriptCompile Include="app\module.ts">
+    <TypeScriptCompile Include="client\app\module.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="server\controllers\app-controller.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="server\controllers\index.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="server\server.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
   </ItemGroup>

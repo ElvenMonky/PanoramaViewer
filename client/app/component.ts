@@ -7,15 +7,16 @@ export class Panorama {
 @Component({
     selector: 'panorama-viewer',
     template: `
-    <ul>
-        <li *ngFor="let item of items">
-            <img src="{{item.src}}" />
-        </li>
-    </ul>`
+    <image-slider [items]="items" (selectedItem)="selectItemChanged" />`
 })
 export class AppComponent {
-    items: Panorama[] =
+    private items: Panorama[] =
     [
         { src: "panorama1.png" }
     ];
+    private selectedItem?: Panorama;
+
+    selectItemChanged(item?: Panorama) {
+        this.selectedItem = item;
+    }
 }

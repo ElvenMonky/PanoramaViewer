@@ -1,0 +1,12 @@
+﻿ul.horizontal-slider {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    white-space: nowrap;
+    overflow-x: auto;
+}
+
+ul.horizontal-slider li {
+    display: inline-block;
+    float: none;
+}
