@@ -9,7 +9,7 @@
   },
   "scripts": {
     "build:typescript": "tsc -w",
-    "build:client:static": "copyfiles client/*.* bin",
+    "build:client:static": "copyfiles client/*.* client/**/*.html client/**/*.css client/images/*.* bin",
     "build:client:node_modules": "copyfiles node_modules/**/* bin/client",
     "build:client": "npm run build:client:static & npm run build:client:node_modules",
     "build": "npm run build:client & npm run build:typescript",

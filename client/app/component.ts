@@ -6,17 +6,17 @@ export class Panorama {
 
 @Component({
     selector: 'panorama-viewer',
-    template: `
-    <image-slider [items]="items" (selectedItem)="selectItemChanged" />`
+    templateUrl: './app/template.html',
+    styleUrls: ['./app/style.css']
 })
 export class AppComponent {
     private items: Panorama[] =
     [
-        { src: "panorama1.png" }
+        new Panorama("panorama1.jpg")
     ];
-    private selectedItem?: Panorama;
+    private selectedItemSrc?: string;
 
     selectItemChanged(item?: Panorama) {
-        this.selectedItem = item;
+        this.selectedItemSrc = `images/${item ? item.src : undefined}`;
     }
 }

@@ -1,15 +1,15 @@
-﻿import { Component, EventEmitter, Input, Output } from '@angular/core';
+﻿import { Component, EventEmitter, Input, Output, OnInit } from '@angular/core';
 
 export class Panorama {
-    constructor(public src: string) {}
+    constructor(public src?: string) {}
 }
 
 @Component({
     selector: 'image-slider',
-    templateUrl: 'template.html',
-    styleUrls: ['style.css']
+    templateUrl: './app/image-slider/template.html',
+    styleUrls: ['./app/image-slider/style.css']
 })
-export class ImageSlider {
+export class ImageSlider implements OnInit {
     private numItems: number = 4;
     private startIndex: number = 0;
     private visibleItems: Panorama[];
@@ -19,15 +19,16 @@ export class ImageSlider {
     items: Panorama[]
 
     @Output()
-    selectedItemChanged: EventEmitter<Panorama> = new EventEmitter<Panorama>();
+    updateSelectedItem: EventEmitter<Panorama> = new EventEmitter<Panorama>();
 
-    constructor(items: Panorama[]) {
-        this.items = items;
+    constructor() { }
+
+    ngOnInit() {
         this.updateVisible();
     }
 
     private updateVisible(): void {
-        this.visibleItems = this.items.slice(this.startIndex, this.startIndex + this.numItems);
+        this.visibleItems = this.items.slice(this.startIndex, this.startIndex + this.numItems).concat(new Panorama());
     }
 
     isNextVisible(): boolean {
@@ -39,6 +40,7 @@ export class ImageSlider {
     }
 
     moveNext(): void {
+        console.log('Move forward');
         if (this.isNextVisible()) {
             this.startIndex++;
             this.updateVisible();
@@ -46,6 +48,7 @@ export class ImageSlider {
     }
 
     moveBack(): void {
+        console.log('Move backward');
         if (this.isBackVisible()) {
             this.startIndex--;
             this.updateVisible();
@@ -53,7 +56,14 @@ export class ImageSlider {
     }
 
     selectItem(item: Panorama): void {
+        console.log('Select item');
         this.selectedItem = item;
-        this.selectedItemChanged.emit(this.selectedItem);
+        this.updateSelectedItem.emit(this.selectedItem);
+    }
+
+    addItem(): void {
+        console.log('Add item');
+        this.selectedItem = null;
+        this.updateSelectedItem.emit(this.selectedItem);
     }
 }

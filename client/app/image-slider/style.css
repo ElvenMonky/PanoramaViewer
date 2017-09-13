@@ -9,4 +9,23 @@
 ul.horizontal-slider li {
     display: inline-block;
     float: none;
+    margin: 0;
+}
+
+.aspect21 {
+    position: relative;
+    width: 100%;
+    padding-top: 50%;
+}
+
+.fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.img-responsive {
+    width: 100%;
 }

@@ -1,9 +1,18 @@
-﻿<div class="row">
-    <div class="left carousel-control" (click)="moveBack()" [ngClass]="isBackVisible()?show:hide" />
-    <div class="right carousel-control" (click)="moveNext()" [ngClass]="isBackVisible()?show:hide" />
-    <ul class="horizontal-slider">
-        <li class="col-md-3" *ngFor="let item of visibleItems" (click)="selectItem(item)" >
-            <img class="thumbnail" src="{{item.src}}" />
+﻿<div class="container-fluid">
+    <div class="left carousel-control" (click)="moveBack()" [ngClass]="{'hidden': !isBackVisible()}">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    </div>
+    <div class="right carousel-control" (click)="moveNext()" [ngClass]="{'hidden': !isNextVisible()}">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    </div>
+    <ul class="horizontal-slider row">
+        <li class="col-md-3 thumbnail" *ngFor="let item of visibleItems" >
+            <div *ngIf="item?.src" class="aspect21" (click)="selectItem(item)">
+                <img class="fill img-responsive" src="images/{{item.src}}" />
+            </div>
+            <div *ngIf="!item?.src" class="aspect21" (click)="addItem()">
+                <span class="fill glyphicons glyphicons-plus"></span>
+            </div>
         </li>
     </ul>
 </div>

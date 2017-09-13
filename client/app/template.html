@@ -1,0 +1,6 @@
+﻿<div class="container-fluid">
+    <div class="fill" *ngIf="selectedItemSrc">
+        <img class="img-responsive" [src]="selectedItemSrc" />
+    </div>
+    <image-slider class="row row-bottom" [items]="items" (updateSelectedItem)="selectItemChanged($event)"></image-slider>
+</div>

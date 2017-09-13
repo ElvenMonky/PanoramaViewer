@@ -1,0 +1,27 @@
+﻿.container-fluid {
+    height: 100%;
+}
+
+.container-fluid .row {
+    width: 100%;
+}
+
+.row-top, .row-bottom {
+    position: fixed;
+}
+
+.row-bottom {
+    bottom: 0;
+}
+
+.fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.img-responsive {
+    width: 100%;
+}
