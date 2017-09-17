@@ -7,7 +7,7 @@ export class Panorama {
 @Component({
     selector: 'panorama-viewer',
     templateUrl: './app/template.html',
-    styleUrls: ['./app/style.css']
+    styleUrls: ['./common.css']
 })
 export class AppComponent {
     private items: Panorama[] =
@@ -17,6 +17,6 @@ export class AppComponent {
     private selectedItemSrc?: string;
 
     selectItemChanged(item?: Panorama) {
-        this.selectedItemSrc = `images/${item ? item.src : undefined}`;
+        this.selectedItemSrc = item ? `images/${item.src}` : undefined;
     }
 }

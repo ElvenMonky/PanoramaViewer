@@ -7,7 +7,7 @@ export class Panorama {
 @Component({
     selector: 'image-slider',
     templateUrl: './app/image-slider/template.html',
-    styleUrls: ['./app/image-slider/style.css']
+    styleUrls: ['./common.css', './app/image-slider/style.css']
 })
 export class ImageSlider implements OnInit {
     private numItems: number = 4;

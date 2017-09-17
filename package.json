@@ -9,23 +9,24 @@
   },
   "scripts": {
     "build:typescript": "tsc -w",
-    "build:client:static": "copyfiles client/*.* client/**/*.html client/**/*.css client/images/*.* bin",
-    "build:client:node_modules": "copyfiles node_modules/**/* bin/client",
-    "build:client": "npm run build:client:static & npm run build:client:node_modules",
+    "build:client:css": "npx postcss client/**/*.css -u autoprefixer -e css --no-map -d bin/ -b .",
+    "build:client:static": "copyfiles client/*.* client/**/*.html client/images/*.* bin",
+    "copy:node_modules": "copyfiles node_modules/**/* bin/client",
+    "build:client": "npm run build:client:static & npm run build:client:css",
     "build": "npm run build:client & npm run build:typescript",
     "start:server": "node bin/server/server.js",
     "start:client": "start http://localhost:3000",
     "start": "npm run start:client & npm run start:server"
   },
   "dependencies": {
-    "@angular/common": "^4.3.6",
-    "@angular/compiler": "^4.3.6",
-    "@angular/core": "^4.3.6",
-    "@angular/forms": "^4.3.6",
-    "@angular/http": "^4.3.6",
-    "@angular/platform-browser": "^4.3.6",
-    "@angular/platform-browser-dynamic": "^4.3.6",
-    "@angular/router": "^4.3.6",
+    "@angular/common": "^4.4.1",
+    "@angular/compiler": "^4.4.1",
+    "@angular/core": "^4.4.1",
+    "@angular/forms": "^4.4.1",
+    "@angular/http": "^4.4.1",
+    "@angular/platform-browser": "^4.4.1",
+    "@angular/platform-browser-dynamic": "^4.4.1",
+    "@angular/router": "^4.4.1",
     "angular-in-memory-web-api": "^0.3.2",
     "core-js": "^2.5.1",
     "express": "^4.15.4",
@@ -36,7 +37,9 @@
   "devDependencies": {
     "@types/express": "^4.0.33",
     "@types/node": "^6.0.46",
+    "autoprefixer": "^7.1.4",
     "copyfiles": "^1.2.0",
+    "postcss-cli": "^4.1.1",
     "typescript": "^2.5.2"
   }
 }

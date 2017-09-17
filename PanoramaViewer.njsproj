@@ -25,13 +25,16 @@
     <Content Include="client\app\image-slider\template.html">
       <SubType>Code</SubType>
     </Content>
-    <Content Include="client\app\style.css">
-      <SubType>Code</SubType>
-    </Content>
     <Content Include="client\app\template.html">
       <SubType>Code</SubType>
     </Content>
+    <Content Include="client\common.css">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="client\index.html">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="client\style.css">
       <SubType>Code</SubType>
     </Content>
     <Content Include="package.json">
