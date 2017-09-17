@@ -1,8 +1,6 @@
 ﻿import { Component, EventEmitter, Input, Output, OnInit } from '@angular/core';
 
-export class Panorama {
-    constructor(public src?: string) {}
-}
+import { Panorama } from '../models/panorama';
 
 @Component({
     selector: 'image-slider',

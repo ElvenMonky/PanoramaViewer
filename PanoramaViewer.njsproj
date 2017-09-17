@@ -28,6 +28,7 @@
     <Content Include="client\app\template.html">
       <SubType>Code</SubType>
     </Content>
+    <Content Include="client\app\three-viewer\template.html" />
     <Content Include="client\common.css">
       <SubType>Code</SubType>
     </Content>
@@ -49,6 +50,8 @@
     <Folder Include="client\app\" />
     <Folder Include="client\" />
     <Folder Include="client\app\image-slider\" />
+    <Folder Include="client\app\models\" />
+    <Folder Include="client\app\three-viewer\" />
     <Folder Include="client\images\" />
     <Folder Include="server\" />
     <Folder Include="server\controllers\" />
@@ -66,9 +69,11 @@
     <TypeScriptCompile Include="client\app\main.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="client\app\models\panorama.ts" />
     <TypeScriptCompile Include="client\app\module.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="client\app\three-viewer\component.ts" />
     <TypeScriptCompile Include="server\controllers\app-controller.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>

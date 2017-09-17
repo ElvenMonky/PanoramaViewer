@@ -1,8 +1,6 @@
 ﻿import { Component } from '@angular/core';
 
-export class Panorama {
-    constructor(public src: string) {}
-}
+import { Panorama } from './models/panorama';
 
 @Component({
     selector: 'panorama-viewer',
@@ -14,9 +12,9 @@ export class AppComponent {
     [
         new Panorama("panorama1.jpg")
     ];
-    private selectedItemSrc?: string;
+    private selectedItem?: Panorama;
 
     selectItemChanged(item?: Panorama) {
-        this.selectedItemSrc = item ? `images/${item.src}` : undefined;
+        this.selectedItem = item;
     }
 }
