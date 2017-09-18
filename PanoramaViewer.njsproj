@@ -50,9 +50,11 @@
     <Folder Include="client\app\" />
     <Folder Include="client\" />
     <Folder Include="client\app\image-slider\" />
-    <Folder Include="client\app\models\" />
+    <Folder Include="common\models\" />
     <Folder Include="client\app\three-viewer\" />
     <Folder Include="client\images\" />
+    <Folder Include="common\" />
+    <Folder Include="common\data\" />
     <Folder Include="server\" />
     <Folder Include="server\controllers\" />
   </ItemGroup>
@@ -69,12 +71,15 @@
     <TypeScriptCompile Include="client\app\main.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
-    <TypeScriptCompile Include="client\app\models\panorama.ts" />
+    <TypeScriptCompile Include="common\models\panorama.ts" />
     <TypeScriptCompile Include="client\app\module.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
     <TypeScriptCompile Include="client\app\three-viewer\component.ts" />
-    <TypeScriptCompile Include="server\controllers\app-controller.ts">
+    <TypeScriptCompile Include="common\data\panorama.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="server\controllers\panorama-controller.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
     <TypeScriptCompile Include="server\controllers\index.ts">

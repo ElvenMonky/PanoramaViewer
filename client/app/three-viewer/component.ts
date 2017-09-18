@@ -1,7 +1,7 @@
 ﻿import { Component, Input, AfterViewInit, ElementRef, ViewChild } from '@angular/core';
 import * as THREE from 'three';
 
-import { Panorama } from '../models/panorama';
+import { Panorama } from '../../../common/models/panorama';
 
 @Component({
     selector: 'three-viewer',

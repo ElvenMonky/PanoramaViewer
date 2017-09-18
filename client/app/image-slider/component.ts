@@ -1,32 +1,47 @@
-﻿import { Component, EventEmitter, Input, Output, OnInit } from '@angular/core';
+﻿import { Component, EventEmitter, Input, Output } from '@angular/core';
 
-import { Panorama } from '../models/panorama';
+import { Panorama } from '../../../common/models/panorama';
 
 @Component({
     selector: 'image-slider',
     templateUrl: './app/image-slider/template.html',
     styleUrls: ['./common.css', './app/image-slider/style.css']
 })
-export class ImageSlider implements OnInit {
+export class ImageSlider {
+    private _items: Panorama[] = [];
     private numItems: number = 4;
     private startIndex: number = 0;
     private visibleItems: Panorama[];
     private selectedItem?: Panorama;
 
+    get items() {
+        return this._items;
+    }
+
     @Input()
-    items: Panorama[]
+    set items(items: Panorama[]) {
+        this._items = items;
+
+        if (this.startIndex + this.numItems > this.items.length) {
+            this.startIndex = Math.max(0, this.items.length - this.numItems);
+        }
+
+        if (items.indexOf(this.selectedItem) == -1) {
+            this.selectItem(undefined);
+        }
+
+        this.updateVisible();
+    }
 
     @Output()
     updateSelectedItem: EventEmitter<Panorama> = new EventEmitter<Panorama>();
 
     constructor() { }
 
-    ngOnInit() {
-        this.updateVisible();
-    }
-
     private updateVisible(): void {
         this.visibleItems = this.items.slice(this.startIndex, this.startIndex + this.numItems).concat(new Panorama());
+        console.log(`Start index: ${this.startIndex}`);
+        console.log(`Items visible: ${JSON.stringify(this.visibleItems)}`);
     }
 
     isNextVisible(): boolean {
