@@ -56,6 +56,10 @@ aside > ul > li {
         margin-left: 2px;
     }
 
+    aside > div > * {
+        transform: rotate(90deg);
+    }
+
     aside > ul > li {
         float: none;
         width: calc(46vh - 20px);

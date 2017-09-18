@@ -50,6 +50,7 @@ export class ThreeViewer implements AfterViewInit {
         this.camera = new THREE.PerspectiveCamera(this.FOV, canvas.clientWidth / canvas.clientHeight, 0.01, this.Radius);
         let target = new THREE.Vector3(this.Radius, 0, 0);
         this.camera.lookAt(target);
+        this.camera.zoom = 0.5;
 
         new THREE.TextureLoader().load(src, (texture) => {
             // creation of a big sphere geometry
