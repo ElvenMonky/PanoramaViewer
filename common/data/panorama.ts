@@ -1,7 +1,7 @@
 ﻿import { Panorama } from '../models/panorama';
 
-let data: Panorama[] = [
-    new Panorama("panorama1.jpg")
-];
+let imageUrls = ["panorama1.jpg"];
+
+let data: Panorama[] = imageUrls.map((imageUrl) => new Panorama(imageUrl));
 
 export default data;
