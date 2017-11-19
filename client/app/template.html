@@ -1,5 +1,0 @@
-﻿<main class="flex-page">
-    <three-viewer class="flex-fill" *ngIf="selectedItem" [item]="selectedItem"></three-viewer>
-    <div class="flex-fill" *ngIf="!selectedItem">Select image</div>
-    <image-slider class="flex-item" [items]="items" (updateSelectedItem)="selectItemChanged($event)"></image-slider>
-</main>

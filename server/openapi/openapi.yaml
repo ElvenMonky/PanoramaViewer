@@ -1,0 +1,70 @@
+﻿openapi: "3.0.0"
+info:
+  version: 1.0.1
+  title: Panorama Viewer API
+  license:
+    name: MIT
+servers:
+  - url: /api
+paths:
+  /panorama:
+    get:
+      summary: List all panoramas
+      operationId: getAll
+      tags:
+        - panorama
+      responses:
+        '200':
+          description: List of panoramas
+          content:
+            application/json:    
+              schema:
+                $ref: "#/components/schemas/Panoramas"
+        default:
+          description: unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+    put:
+      summary: Add panorama
+      operationId: add
+      tags:
+        - panorama
+      requestBody:
+        content:
+          image/jpeg:
+            schema:
+              type: string
+              format: binary
+      responses:
+        '201':
+          description: Null response
+        default:
+          description: unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+components:
+  schemas:
+    Panorama:
+      required:
+        - src
+      properties:
+        src:
+          type: string
+    Panoramas:
+      type: array
+      items:
+        $ref: "#/components/schemas/Panorama"
+    Error:
+      required:
+        - code
+        - message
+      properties:
+        code:
+          type: integer
+          format: int32
+        message:
+          type: string

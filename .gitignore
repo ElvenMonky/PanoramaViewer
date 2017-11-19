@@ -65,3 +65,7 @@ typings/
 /bin
 /obj/Debug
 /package-lock.json
+/server/bin
+/angular/bin
+/server/obj/Debug
+/model/bin

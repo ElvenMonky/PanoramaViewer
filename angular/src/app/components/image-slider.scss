@@ -1,0 +1,61 @@
+button {
+    border: 1px solid black;
+    border-radius: 4px;
+}
+
+:host > button {
+    flex: 0 0 4%;
+
+    &:first-child::before {
+        content: "&lt;";
+    }
+
+    &:last-child::before {
+        content: "&gt;";
+    }
+}
+
+:host, ul {
+    display: flex;
+    align-items: stretch;
+    flex-direction: row;
+}
+
+ul {
+    flex: 1 1 0;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    & > li {
+        flex: 0 0 25%;
+        position: relative;
+
+        & > img, & > button {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        &:last-child > button::before {
+            content: "+"
+        }
+    }
+}
+
+@media (min-aspect-ratio: 3/2) {
+    :host, ul {
+        flex-direction: column;
+        width: 50vh;
+    }
+
+        :host > button > * {
+            transform: rotate(90deg);
+        }
+}
+
+@media (max-aspect-ratio: 3/2) {
+    ul > li {
+        padding-bottom: 12.5%;
+    }
+}

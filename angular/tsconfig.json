@@ -1,0 +1,28 @@
+{
+    "compileOnSave": true,
+    "preserveWhitespaces": false,
+    "compilerOptions": {
+        "outDir": "./bin",
+        "noImplicitAny": true,
+        "suppressImplicitAnyIndexErrors": true,
+        "noEmitOnError": true,
+        "removeComments": true,
+        "module": "commonjs",
+        "sourceMap": true,
+        "declaration": false,
+        "moduleResolution": "node",
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "target": "es2015",
+        "typeRoots": [
+            "node_modules/@types"
+        ],
+        "lib": [
+            "es2017",
+            "dom"
+        ]
+    },
+    "exclude": [
+        "node_modules"
+    ]
+}

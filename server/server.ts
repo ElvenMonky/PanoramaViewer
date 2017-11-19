@@ -1,14 +1,17 @@
-﻿import * as express from 'express';
+﻿import "reflect-metadata";
+import * as express from 'express';
+import { createExpressServer } from "routing-controllers";
+import { PanoramaController } from "./controllers/panorama";
 
-import { PanoramaController } from './controllers';
+var app = createExpressServer({
+    routePrefix: "/api",
+    controllers: [__dirname + "/controllers/*.js"]
+});
+app.use(express.static(__dirname + '/../openapi'));
+app.use(express.static(__dirname + '/../../angular/bin/'));
 
-const app: express.Application = express();
-const port: number = process.env.PORT || 3000;
-
-app.use(express.static(__dirname + '/../client'));
-app.use('/common', express.static(__dirname + '/../common'));
-app.use('/panorama', PanoramaController);
-
+const port: number = process.env.PORT || 1337;
 app.listen(port, () => {
     console.log(`Listening at http://localhost:${port}/`);
 });
+

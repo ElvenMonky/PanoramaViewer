@@ -1,0 +1,21 @@
+{
+    "name": "@panorama-viewer/model",
+    "description": "Data model for panorama-viewer application",
+    "version": "1.0.1",
+    "license": "MIT",
+    "main": "bin/index.js",
+    "author": {
+        "name": "Serhii Hrynko"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/ElvenMonky/PanoramaViewer.git"
+    },
+    "scripts": {
+        "build": "tsc"
+    },
+    "devDependencies": {
+        "@types/node": "^6.0.87",
+        "typescript": "~2.4.2"
+    }
+}

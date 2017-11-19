@@ -1,0 +1,8 @@
+<button *ngIf="canMoveBack" (click)="moveBack()"></button>
+<ul>
+    <li *ngFor="let item of visibleItems; trackBy: trackBy">
+        <img *ngIf="item?.src" (click)="selectItem(item)" src="images/{{item.src}}" />
+        <button *ngIf="!item?.src" (click)="addItem()"></button>
+    </li>
+</ul>
+<button *ngIf="canMoveNext" (click)="moveNext()"></button>
