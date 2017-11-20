@@ -36,6 +36,9 @@
       <SubType>Code</SubType>
     </TypeScriptCompile>
     <TypeScriptCompile Include="index.ts" />
+    <Content Include="images\panorama1.jpg" />
+    <Content Include="images\panorama2.jpg" />
+    <Content Include="images\panorama3.jpg" />
     <Content Include="package.json" />
     <Content Include="README.md" />
     <Content Include="tsconfig.json" />
@@ -45,6 +48,7 @@
   <ItemGroup>
     <Folder Include="models\" />
     <Folder Include="apis\" />
+    <Folder Include="images\" />
     <Folder Include="stubData\" />
   </ItemGroup>
   <!-- Do not delete the following Import Project.  While this appears to do nothing it is a marker for setting TypeScript properties before our import that depends on them. -->

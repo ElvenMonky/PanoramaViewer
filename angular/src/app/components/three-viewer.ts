@@ -27,13 +27,18 @@ export class ThreeViewer implements AfterViewInit {
     private scene: THREE.Scene;
     private camera: THREE.PerspectiveCamera;
 
+    private url: string;
+    private initialized: boolean = false;
+
     @Input()
-    item: Panorama;
+    set item(value: Panorama) {
+        this.url = `images/${value.src}`;
+        this.updateSource();
+    }
 
     constructor(private host: ElementRef) { }
 
     ngAfterViewInit() {
-        let src = `images/${this.item.src}`;
         let canvas = this.host.nativeElement;
 
         // setting up the renderer
@@ -52,7 +57,13 @@ export class ThreeViewer implements AfterViewInit {
         this.camera.zoom = 0.5;
         this.camera.updateProjectionMatrix();
 
-        new THREE.TextureLoader().load(src, (texture) => {
+        this.initialized = true;
+        this.updateSource();
+    }
+
+    private updateSource() {
+        if (!this.url) return;
+        new THREE.TextureLoader().load(this.url, (texture) => {
             // creation of a big sphere geometry
             let sphere = new THREE.SphereGeometry(this.Radius, 100, 50);
             sphere.applyMatrix(new THREE.Matrix4().makeScale(-1, 1, 1));

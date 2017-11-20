@@ -37,10 +37,12 @@ export class PanoramaViewer {
             .then(items => {
                 console.log(`Items received: ${JSON.stringify(items)}`);
                 this.items = items;
+                this.selectedItem = this.items[0] ? this.items[0] : null;
             })
             .catch(error => {
                 console.log(`Http error: ${error}`);
                 this.items = stubPanoramaData;
+                this.selectedItem = this.items[0] ? this.items[0] : null;
             });
     }
 
@@ -50,6 +52,8 @@ export class PanoramaViewer {
         if (file && this.panoramaApi) {
             const reader = new FileReader();
             reader.onload = e => {
+                console.log(reader.result);
+                console.log((<ArrayBuffer>reader.result).byteLength);
                 this.panoramaApi.add(reader.result)
                     .then(() => this.update())
             };

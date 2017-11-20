@@ -47,7 +47,6 @@
     <TypeScriptCompile Include="src\app\app.module.ts" />
     <TypeScriptCompile Include="src\environments\environment.prod.ts" />
     <TypeScriptCompile Include="src\environments\environment.ts" />
-    <Content Include="src\images\panorama1.jpg" />
     <Content Include="src\app\components\image-slider.html" />
     <Content Include="src\app\components\panorama-viewer.html" />
     <Content Include="src\app\components\image-slider.scss" />
@@ -64,7 +63,6 @@
     <Folder Include="src\app\services\" />
     <Folder Include="src\assets" />
     <Folder Include="src\environments" />
-    <Folder Include="src\images" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <!--Do not delete the following Import Project.  While this appears to do nothing it is a marker for setting TypeScript properties before our import that depends on them.-->

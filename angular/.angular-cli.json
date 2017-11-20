@@ -10,8 +10,8 @@
             "outDir": "bin",
             "assets": [
                 "assets",
-                "./images",
-                "./favicon.ico"
+                "./favicon.ico",
+                "./styles.css"
             ],
             "index": "index.html",
             "main": "main.ts",

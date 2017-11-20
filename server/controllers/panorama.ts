@@ -1,11 +1,11 @@
-﻿import { JsonController, Get, Put, Body } from "routing-controllers";
+﻿import { JsonController, Get, Put, Body, BadRequestError } from "routing-controllers";
 import { Panorama, PanoramaApi } from '@panorama-viewer/model';
 import * as fs from 'fs';
 import * as uuid from 'uuid/v1';
 
 @JsonController("/panorama")
 export class PanoramaController implements PanoramaApi {
-    private static dirName = `${__dirname}/../../../angular/bin/images`;
+    private static dirName = `${__dirname}/../images`;
 
     @Get("/")
     getAll(): Promise<Panorama[]> {
@@ -16,9 +16,11 @@ export class PanoramaController implements PanoramaApi {
 
     @Put("/")
     add( @Body() imageData: ArrayBuffer): Promise<void> {
+        if (!imageData.byteLength) throw new BadRequestError();
         const fileName = `${PanoramaController.dirName}/${uuid()}.jpg`;
+        const buffer = new Buffer(imageData);
         return new Promise<void>((resolve, reject) => {
-            fs.writeFile(fileName, imageData, 'binary', err => err ? reject(err) : resolve());
+            fs.writeFile(fileName, buffer, err => err ? reject(err) : resolve());
         });
     }
 }

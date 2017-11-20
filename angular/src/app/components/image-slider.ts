@@ -28,10 +28,6 @@ export class ImageSlider {
         if (this.startIndex + this.numItems > this._items.length) {
             this.startIndex = Math.max(0, this._items.length - this.numItems);
         }
-
-        if (this._items.indexOf(this.selectedItem) == -1) {
-            this.selectItem(null);
-        }
     }
 
     @Input()
