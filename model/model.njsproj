@@ -38,7 +38,6 @@
     <TypeScriptCompile Include="index.ts" />
     <Content Include="images\panorama1.jpg" />
     <Content Include="images\panorama2.jpg" />
-    <Content Include="images\panorama3.jpg" />
     <Content Include="package.json" />
     <Content Include="README.md" />
     <Content Include="tsconfig.json" />
