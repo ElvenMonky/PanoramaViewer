@@ -39,6 +39,8 @@
     <Content Include="tslint.json" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="config\" />
+    <Folder Include="scripts\" />
     <Folder Include="public\" />
     <Folder Include="src\" />
     <Folder Include="src\components\" />
@@ -48,6 +50,16 @@
     <TypeScriptCompile Include="src\components\App.tsx" />
     <TypeScriptCompile Include="src\index.tsx" />
     <TypeScriptCompile Include="src\registerServiceWorker.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="config\env.js" />
+    <Compile Include="config\paths.js" />
+    <Compile Include="config\webpack.config.dev.js" />
+    <Compile Include="config\webpack.config.prod.js" />
+    <Compile Include="config\webpackDevServer.config.js" />
+    <Compile Include="scripts\build.js" />
+    <Compile Include="scripts\start.js" />
+    <Compile Include="scripts\test.js" />
   </ItemGroup>
   <!-- Do not delete the following Import Project.  While this appears to do nothing it is a marker for setting TypeScript properties before our import that depends on them. -->
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="False" />
