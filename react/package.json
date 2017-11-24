@@ -1,0 +1,41 @@
+{
+    "name": "@panorama-viewer/react-client",
+    "version": "1.0.1",
+    "license": "MIT",
+    "author": {
+        "name": "Serhii Hrynko"
+    },
+    "scripts": {
+        "start": "react-scripts-ts start",
+        "build": "react-scripts-ts build",
+        "test": "react-scripts-ts test --env=jsdom",
+        "eject": "react-scripts-ts eject"
+    },
+    "browserslist": [
+        "> 1%",
+        "last 2 versions"
+    ],
+    "dependencies": {
+        "react": "^16.1.1",
+        "react-dom": "^16.1.1",
+        "react-redux": "^5.0.6",
+        "react-scripts-ts": "^2.8.0",
+        "redux": "^3.7.2"
+    },
+    "devDependencies": {
+        "@panorama-viewer/model": "file:../model",
+        "@types/three": "^0.84.33",
+        "@types/node": "^8.0.53",
+        "@types/react": "^16.0.25",
+        "@types/react-dom": "^16.0.3",
+        "@types/react-redux": "^5.0.13",
+        "@types/jest": "^21.1.8",
+        "jest": "^21.2.1",
+        "swagger-client": "^3.3.5",
+        "three": "^0.88.0",
+        "tslint": "^5.8.0",
+        "typescript": "^2.6.1",
+        "webpack": "^3.8.1",
+        "uglify-es": "^3.1.10"
+    }
+}

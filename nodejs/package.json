@@ -14,6 +14,7 @@
     "scripts": {
         "clean": "rimraf bin",
         "prepare:angular": "cd ../angular && npm run build && cd ../nodejs && copyfiles -f \"../angular/bin/*\" bin/client",
+        "prepare:react": "cd ../react && npm run build && cd ../nodejs && copyfiles -f \"../react/bin/*\" bin/client",
         "start": "node bin/server.js",
         "build": "tsc && copyfiles -f \"../model/images/*\" bin/images && copyfiles -f \"../model/*.yaml\" bin/openapi"
     },

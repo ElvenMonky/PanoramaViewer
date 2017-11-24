@@ -9,6 +9,8 @@ Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "AngularClient", "angular\An
 EndProject
 Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "NodeJsServer", "nodejs\NodeJsServer.njsproj", "{A356DA91-B77A-4CA2-8516-D88886B536D5}"
 EndProject
+Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "ReactClient", "react\ReactClient.njsproj", "{14755CEE-38BA-4AF0-BA85-91B2C2A6353B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{A356DA91-B77A-4CA2-8516-D88886B536D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A356DA91-B77A-4CA2-8516-D88886B536D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A356DA91-B77A-4CA2-8516-D88886B536D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14755CEE-38BA-4AF0-BA85-91B2C2A6353B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14755CEE-38BA-4AF0-BA85-91B2C2A6353B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14755CEE-38BA-4AF0-BA85-91B2C2A6353B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14755CEE-38BA-4AF0-BA85-91B2C2A6353B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

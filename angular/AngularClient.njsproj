@@ -61,7 +61,6 @@
     <Folder Include="src\app" />
     <Folder Include="src\app\components" />
     <Folder Include="src\app\services\" />
-    <Folder Include="src\assets" />
     <Folder Include="src\environments" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />

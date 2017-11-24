@@ -9,7 +9,6 @@
             "root": "src",
             "outDir": "bin",
             "assets": [
-                "assets",
                 "./favicon.ico",
                 "./styles.css"
             ],

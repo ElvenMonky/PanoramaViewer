@@ -70,3 +70,5 @@ typings/
 /server/obj/Debug
 /model/bin
 /nodejs/bin
+/react/bin
+/react/obj/Debug
