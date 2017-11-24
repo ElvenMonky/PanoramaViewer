@@ -5,9 +5,9 @@ VisualStudioVersion = 15.0.27004.2009
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "model", "model\model.njsproj", "{E082CFBF-9073-4F24-AE79-F474CDCBBD96}"
 EndProject
-Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "server", "server\server.njsproj", "{A356DA91-B77A-4CA2-8516-D88886B536D5}"
-EndProject
 Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "AngularClient", "angular\AngularClient.njsproj", "{86FEC2E8-1FAB-44C6-A8AB-1B8EF91F7BAA}"
+EndProject
+Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "NodeJsServer", "nodejs\NodeJsServer.njsproj", "{A356DA91-B77A-4CA2-8516-D88886B536D5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,14 +19,14 @@ Global
 		{E082CFBF-9073-4F24-AE79-F474CDCBBD96}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E082CFBF-9073-4F24-AE79-F474CDCBBD96}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E082CFBF-9073-4F24-AE79-F474CDCBBD96}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A356DA91-B77A-4CA2-8516-D88886B536D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A356DA91-B77A-4CA2-8516-D88886B536D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A356DA91-B77A-4CA2-8516-D88886B536D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A356DA91-B77A-4CA2-8516-D88886B536D5}.Release|Any CPU.Build.0 = Release|Any CPU
 		{86FEC2E8-1FAB-44C6-A8AB-1B8EF91F7BAA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{86FEC2E8-1FAB-44C6-A8AB-1B8EF91F7BAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{86FEC2E8-1FAB-44C6-A8AB-1B8EF91F7BAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{86FEC2E8-1FAB-44C6-A8AB-1B8EF91F7BAA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A356DA91-B77A-4CA2-8516-D88886B536D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A356DA91-B77A-4CA2-8516-D88886B536D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A356DA91-B77A-4CA2-8516-D88886B536D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A356DA91-B77A-4CA2-8516-D88886B536D5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

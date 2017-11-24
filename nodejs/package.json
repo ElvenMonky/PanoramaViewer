@@ -12,9 +12,10 @@
         "url": "https://github.com/ElvenMonky/PanoramaViewer.git"
     },
     "scripts": {
-        "prestart": "cd ../angular && npm run build && cd ./",
+        "clean": "rimraf bin",
+        "prepare:angular": "cd ../angular && npm run build && cd ../nodejs && copyfiles -f \"../angular/bin/*\" bin/client",
         "start": "node bin/server.js",
-        "build": "tsc && copyfiles -f \"../model/images/*\" bin/images"
+        "build": "tsc && copyfiles -f \"../model/images/*\" bin/images && copyfiles -f \"../model/*.yaml\" bin/openapi"
     },
     "dependencies": {
         "express": "^4.16.2",
@@ -30,6 +31,7 @@
         "@types/body-parser": "^1.16.8",
         "@types/multer": "^1.3.6",
         "typescript": "~2.4.2",
-        "copyfiles": "^1.2.0"
+        "copyfiles": "^1.2.0",
+        "rimraf": "^2.6.2"
     }
 }

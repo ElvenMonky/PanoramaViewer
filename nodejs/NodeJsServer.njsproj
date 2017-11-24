@@ -3,7 +3,7 @@
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">14.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
-    <Name>server</Name>
+    <Name>NodeJsServer</Name>
     <RootNamespace>server</RootNamespace>
     <NodeExeArguments>
     </NodeExeArguments>
@@ -13,7 +13,8 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>a356da91-b77a-4ca2-8516-d88886b536d5</ProjectGuid>
-    <ProjectHome>.</ProjectHome>
+    <ProjectHome>
+    </ProjectHome>
     <StartupFile>bin/server.js</StartupFile>
     <StartWebBrowser>True</StartWebBrowser>
     <SearchPath>
@@ -38,16 +39,12 @@
   <ItemGroup>
     <TypeScriptCompile Include="controllers\panorama.ts" />
     <TypeScriptCompile Include="server.ts" />
-    <Content Include="openapi\openapi.yaml">
-      <SubType>Code</SubType>
-    </Content>
     <Content Include="tsconfig.json" />
     <Content Include="package.json" />
     <Content Include="README.md" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="controllers\" />
-    <Folder Include="openapi\" />
   </ItemGroup>
   <!-- Do not delete the following Import Project.  While this appears to do nothing it is a marker for setting TypeScript properties before our import that depends on them. -->
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="False" />
