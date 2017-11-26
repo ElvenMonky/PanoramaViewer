@@ -6,9 +6,29 @@ import { DataAccessServiceBase } from "./../services/dataAccessService";
 
 export class PanoramaViewerBase {
     private panoramaApi: PanoramaApi;
-    public items: Panorama[] = [];
+    private _items: Panorama[] = [];
 
-    public selectedItem: Panorama = null;
+    public get items(): Panorama[] {
+        return this._items;
+    }
+
+    public set items(value: Panorama[]) {
+        this._items = value;
+        this.emitChange();
+    }
+
+    private _selectedItem: Panorama = null;
+
+    public get selectedItem(): Panorama {
+        return this._selectedItem;
+    }
+
+    public set selectedItem(value: Panorama) {
+        this._selectedItem = value;
+        this.emitChange();
+    }
+
+    public emitChange = () => { };
 
     constructor(dataAccessService: DataAccessServiceBase) {
         dataAccessService.panoramaApi.subscribe(panoramaApi => {

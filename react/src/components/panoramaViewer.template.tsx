@@ -8,7 +8,7 @@ export default props => (
     {props.selectedItem ? (
         <ThreeViewer item={props.selectedItem} />
     ) : (
-        <div><span>Select image: </span><input type="file" accept="image/jpeg" onInput={e => props.fileSelected(e)} /></div>
+        <div><span>Select image: </span><input type="file" accept="image/jpeg" onChange={e => props.fileSelected(e)} /></div>
     )}
     <ImageSlider items={props.items} selectedItem={props.selectedItem} selectedItemChange={e => props.selectedItemChange(e)} />
 </div>);

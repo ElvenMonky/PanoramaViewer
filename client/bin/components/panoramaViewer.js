@@ -2,13 +2,28 @@ import 'rxjs/operators/map';
 import { stubPanoramaData } from '@panorama-viewer/model';
 export class PanoramaViewerBase {
     constructor(dataAccessService) {
-        this.items = [];
-        this.selectedItem = null;
+        this._items = [];
+        this._selectedItem = null;
+        this.emitChange = () => { };
         dataAccessService.panoramaApi.subscribe(panoramaApi => {
             this.panoramaApi = panoramaApi;
             this.selectedItem = null;
             this.update();
         });
+    }
+    get items() {
+        return this._items;
+    }
+    set items(value) {
+        this._items = value;
+        this.emitChange();
+    }
+    get selectedItem() {
+        return this._selectedItem;
+    }
+    set selectedItem(value) {
+        this._selectedItem = value;
+        this.emitChange();
     }
     update() {
         if (!this.panoramaApi) {
