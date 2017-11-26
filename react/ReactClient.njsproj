@@ -31,7 +31,9 @@
   <ItemGroup>
     <Content Include="package.json" />
     <Content Include="README.md" />
+    <Content Include="src\components\imageSlider.scss" />
     <Content Include="src\components\imageSlider.template.tsx" />
+    <Content Include="src\components\panoramaViewer.scss" />
     <Content Include="tsconfig.json" />
     <Content Include="tslint.json" />
   </ItemGroup>
