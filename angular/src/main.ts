@@ -8,5 +8,6 @@ if (environment.production) {
     enableProdMode();
 }
 
+document.body.appendChild(document.createElement('panoramaViewer'));
 platformBrowserDynamic().bootstrapModule(AppModule)
     .catch(err => console.log(err));

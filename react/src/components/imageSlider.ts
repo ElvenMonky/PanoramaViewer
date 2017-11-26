@@ -1,13 +1,8 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import * as React from 'react';
 
+import Template from './imageSlider.template';
 import { Panorama } from '@panorama-viewer/model';
 
-@Component({
-    moduleId: module.id,
-    selector: 'image-slider',
-    templateUrl: './image-slider.html',
-    styleUrls: ['./image-slider.scss']
-})
 export class ImageSlider {
     private _items: Panorama[] = [];
     private numItems: number = 4;
@@ -17,11 +12,6 @@ export class ImageSlider {
         return this._items.slice(this.startIndex, this.startIndex + this.numItems).concat(new Panorama());
     }
 
-    public trackBy(index: number, item: Panorama): string {
-        return item.src;
-    }
-
-    @Input()
     set items(items: Panorama[]) {
         this._items = items || [];
 
@@ -30,13 +20,15 @@ export class ImageSlider {
         }
     }
 
-    @Input()
     selectedItem: Panorama;
 
-    @Output()
-    selectedItemChange: EventEmitter<Panorama> = new EventEmitter<Panorama>();
+    selectedItemChange: (value: Panorama) => void;
 
-    constructor() { }
+    constructor(props) {
+        this.items = props.items;
+        this.selectedItem = props.selectedItem;
+        this.selectedItemChange = props.selectedItemChange;
+    }
 
     get canMoveNext(): boolean {
         return this.startIndex + this.numItems < this._items.length;
@@ -63,12 +55,14 @@ export class ImageSlider {
     selectItem(item: Panorama): void {
         console.log('Select item');
         this.selectedItem = item;
-        this.selectedItemChange.emit(this.selectedItem);
+        this.selectedItemChange(this.selectedItem);
     }
 
     addItem(): void {
         console.log('Add item');
         this.selectedItem = null;
-        this.selectedItemChange.emit(this.selectedItem);
+        this.selectedItemChange(this.selectedItem);
     }
 }
+
+export default props => React.createElement(Template, new ImageSlider(props));

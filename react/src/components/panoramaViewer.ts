@@ -5,17 +5,17 @@ import { Observable } from 'rxjs';
 import 'rxjs/operators/map';
 
 import { Panorama, PanoramaApi, stubPanoramaData } from '@panorama-viewer/model';
-import { DataAccessService } from "../services/DataAccessService";
+import { DataAccessService } from "../services/dataAccessService";
 
 @Component({
-    moduleId: module.id,
-    selector: 'panorama-viewer',
-    templateUrl: './panorama-viewer.html',
-    styleUrls: ['./panorama-viewer.scss']
+    selector: 'panoramaViewer',
+    templateUrl: './panoramaViewer.html',
+    styleUrls: ['./panoramaViewer.scss']
 })
 export class PanoramaViewer {
     private panoramaApi: PanoramaApi;
     public items: Panorama[] = [];
+
     public selectedItem: Panorama = null;
 
     constructor(dataAccessService: DataAccessService) {

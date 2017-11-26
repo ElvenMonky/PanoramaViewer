@@ -30,29 +30,32 @@
   </PropertyGroup>
   <ItemGroup>
     <Content Include="package.json" />
-    <Content Include="public\favicon.ico" />
-    <Content Include="public\index.html" />
-    <Content Include="public\manifest.json" />
     <Content Include="README.md" />
-    <Content Include="src\styles.css" />
+    <Content Include="src\components\imageSlider.template.tsx" />
     <Content Include="tsconfig.json" />
     <Content Include="tslint.json" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="config\" />
+    <Folder Include="config\jest\" />
     <Folder Include="scripts\" />
-    <Folder Include="public\" />
     <Folder Include="src\" />
     <Folder Include="src\components\" />
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Include="src\components\App.test.tsx" />
-    <TypeScriptCompile Include="src\components\App.tsx" />
+    <TypeScriptCompile Include="src\components\imageSlider.ts" />
+    <TypeScriptCompile Include="src\components\panoramaViewer.ts" />
+    <TypeScriptCompile Include="src\components\threeViewer.tsx" />
+    <TypeScriptCompile Include="src\components\panoramaViewer.test.tsx" />
+    <TypeScriptCompile Include="src\components\panoramaViewer.template.tsx" />
     <TypeScriptCompile Include="src\index.tsx" />
     <TypeScriptCompile Include="src\registerServiceWorker.ts" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="config\env.js" />
+    <Compile Include="config\jest\cssTransform.js" />
+    <Compile Include="config\jest\fileTransform.js" />
+    <Compile Include="config\jest\typescriptTransform.js" />
     <Compile Include="config\paths.js" />
     <Compile Include="config\webpack.config.dev.js" />
     <Compile Include="config\webpack.config.prod.js" />

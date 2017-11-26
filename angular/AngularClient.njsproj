@@ -32,9 +32,6 @@
     <Content Include="e2e\tsconfig.e2e.json" />
     <TypeScriptCompile Include="e2e\app.e2e-spec.ts" />
     <TypeScriptCompile Include="e2e\app.po.ts" />
-    <Content Include="src\index.html" />
-    <Content Include="src\styles.css" />
-    <Content Include="src\favicon.ico" />
     <Content Include="src\tsconfig.app.json" />
     <Content Include="src\tsconfig.spec.json" />
     <TypeScriptCompile Include="src\app\services\DataAccessService.ts">
@@ -47,13 +44,13 @@
     <TypeScriptCompile Include="src\app\app.module.ts" />
     <TypeScriptCompile Include="src\environments\environment.prod.ts" />
     <TypeScriptCompile Include="src\environments\environment.ts" />
-    <Content Include="src\app\components\image-slider.html" />
-    <Content Include="src\app\components\panorama-viewer.html" />
-    <Content Include="src\app\components\image-slider.scss" />
-    <Content Include="src\app\components\panorama-viewer.scss" />
-    <TypeScriptCompile Include="src\app\components\image-slider.ts" />
-    <TypeScriptCompile Include="src\app\components\panorama-viewer.ts" />
-    <TypeScriptCompile Include="src\app\components\three-viewer.ts" />
+    <Content Include="src\app\components\imageSlider.html" />
+    <Content Include="src\app\components\panoramaViewer.html" />
+    <Content Include="src\app\components\imageSlider.scss" />
+    <Content Include="src\app\components\panoramaViewer.scss" />
+    <TypeScriptCompile Include="src\app\components\imageSlider.ts" />
+    <TypeScriptCompile Include="src\app\components\panoramaViewer.ts" />
+    <TypeScriptCompile Include="src\app\components\threeViewer.ts" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="e2e" />

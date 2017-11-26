@@ -1,15 +1,8 @@
-import { Component, Input, AfterViewInit, ElementRef, HostListener } from '@angular/core';
 import * as THREE from 'three';
 
 import { Panorama } from '@panorama-viewer/model';
 
-@Component({
-    moduleId: module.id,
-    selector: 'three-viewer',
-    template: '',
-    styles: [':host { cursor: move; }']
-})
-export class ThreeViewer implements AfterViewInit {
+export class ThreeViewerBase {
     private FOV: number = 50;
     private Radius: number = 1000;
     private mDelta: number = 0.1;
@@ -30,17 +23,12 @@ export class ThreeViewer implements AfterViewInit {
     private url: string;
     private initialized: boolean = false;
 
-    @Input()
     set item(value: Panorama) {
         this.url = `images/${value.src}`;
         this.updateSource();
     }
 
-    constructor(private host: ElementRef) { }
-
-    ngAfterViewInit() {
-        let canvas = this.host.nativeElement;
-
+    init(canvas: any) {
         // setting up the renderer
         this.renderer = new THREE.WebGLRenderer();
         this.renderer.setSize(canvas.clientWidth, canvas.clientHeight);
@@ -63,7 +51,7 @@ export class ThreeViewer implements AfterViewInit {
 
     private updateSource() {
         if (!this.url) return;
-        new THREE.TextureLoader().load(this.url, (texture) => {
+        new THREE.TextureLoader().load(this.url, texture => {
             // creation of a big sphere geometry
             let sphere = new THREE.SphereGeometry(this.Radius, 100, 50);
             sphere.applyMatrix(new THREE.Matrix4().makeScale(-1, 1, 1));
@@ -104,16 +92,13 @@ export class ThreeViewer implements AfterViewInit {
         this.renderer.render(this.scene, this.camera);
     }
 
-    @HostListener('window:resize', ['$event'])
-    onResize($event: any) {
-        let canvas = this.host.nativeElement;
+    onResize(canvas: any) {
         this.camera.aspect = canvas.clientWidth / canvas.clientHeight;
         this.camera.updateProjectionMatrix();
         this.renderer.setSize(canvas.clientWidth, canvas.clientHeight);
     }
 
     // when the mouse is pressed, we switch to manual control and save current coordinates
-    @HostListener('mousedown', ['$event'])
     onMouseDown($event: any) {
         $event.preventDefault();
         this.manualControl = true;
@@ -124,7 +109,6 @@ export class ThreeViewer implements AfterViewInit {
     }
 
     // when the mouse moves, if in manual contro we adjust coordinates
-    @HostListener('mousemove', ['$event'])
     onMouseMove($event: any) {
         if (this.manualControl) {
             this.longitude = (this.savedX - $event.clientX) * 0.1 + this.savedLongitude;
@@ -133,13 +117,11 @@ export class ThreeViewer implements AfterViewInit {
     }
 
     // when the mouse is released, we turn manual control off
-    @HostListener('mouseup', ['$event'])
     onMouseUp() {
         this.manualControl = false;
     }
 
     // when the mouse is released, we turn manual control off
-    @HostListener('mousewheel', ['$event'])
     onMouseWheel($event: any) {
         var delta = Math.max(-1, Math.min(1, ($event.wheelDelta || -$event.detail)));
         this.camera.zoom = Math.max(0.2, Math.min(10, this.camera.zoom * (1 + this.mDelta * delta)));
@@ -147,7 +129,6 @@ export class ThreeViewer implements AfterViewInit {
     }
 
     // pressing a key (actually releasing it) changes the texture map
-    @HostListener('keyup', ['$event'])
     onKeyUp($event: any) {
         if ($event.keyCode == 32) {
             this.camera.zoom = 1;

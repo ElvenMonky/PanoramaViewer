@@ -1,0 +1,3 @@
+<threeViewer *ngIf="selectedItem" [item]="selectedItem"></threeViewer>
+<div *ngIf="!selectedItem"><span>Select image: </span><input type="file" accept="image/jpeg" (change)="fileSelected($event)"></div>
+<imageSlider [items]="items" [(selectedItem)]="selectedItem"></imageSlider>

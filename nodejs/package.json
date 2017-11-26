@@ -3,7 +3,6 @@
     "description": "Server of panorama-viewer application",
     "version": "1.0.1",
     "license": "MIT",
-    "main": "bin/server.js",
     "author": {
         "name": "Serhii Hrynko"
     },

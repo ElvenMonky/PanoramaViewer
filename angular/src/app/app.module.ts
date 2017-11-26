@@ -1,11 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { PanoramaViewer } from './components/panorama-viewer';
-import { ImageSlider } from './components/image-slider';
-import { ThreeViewer } from './components/three-viewer';
+import { PanoramaViewer } from './components/panoramaViewer';
+import { ImageSlider } from './components/imageSlider';
+import { ThreeViewer } from './components/threeViewer';
 
-import { DataAccessService } from "./services/DataAccessService";
+import { DataAccessService } from "./services/dataAccessService";
 
 @NgModule({
     imports: [BrowserModule],

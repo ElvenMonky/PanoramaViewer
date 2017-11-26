@@ -1,6 +1,6 @@
 {
-    "name": "@panorama-viewer/model",
-    "description": "Data model for panorama-viewer application",
+    "name": "@panorama-viewer/client",
+    "description": "Base client code for panorama-viewer application",
     "version": "1.0.1",
     "license": "MIT",
     "main": "bin/index.js",
@@ -15,8 +15,15 @@
     "scripts": {
         "build": "tsc"
     },
+    "dependencies": {
+        "rxjs": "^5.5.2"
+    },
     "devDependencies": {
-        "@types/node": "^6.0.87",
+        "@panorama-viewer/model": "file:../model",
+        "@types/node": "~6.0.60",
+        "@types/three": "^0.84.33",
+        "swagger-client": "^3.3.5",
+        "three": "^0.88.0",
         "typescript": "~2.4.2"
     }
 }

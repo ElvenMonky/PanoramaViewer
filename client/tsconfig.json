@@ -1,15 +1,13 @@
 {
     "compileOnSave": true,
-    "preserveWhitespaces": false,
     "compilerOptions": {
         "outDir": "./bin",
-        "noImplicitAny": true,
         "suppressImplicitAnyIndexErrors": true,
         "noEmitOnError": true,
         "removeComments": true,
         "module": "esnext",
         "sourceMap": true,
-        "declaration": false,
+        "declaration": true,
         "moduleResolution": "node",
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true,
