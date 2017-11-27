@@ -69,3 +69,5 @@ typings/
 /client/bin
 /react/obj/Debug
 /nodejs/bin
+/angular/bin
+/react/bin
