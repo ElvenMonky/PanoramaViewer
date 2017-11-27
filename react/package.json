@@ -1,9 +1,14 @@
 {
     "name": "@panorama-viewer/react-client",
+    "description": "React based rendering for Panorama Viewer client",
     "version": "1.0.1",
     "license": "MIT",
     "author": {
         "name": "Serhii Hrynko"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/ElvenMonky/PanoramaViewer.git"
     },
     "scripts": {
         "start": "node scripts/start.js",

@@ -18,8 +18,10 @@ export default class ThreeViewer extends React.Component<any, {}> {
         window.addEventListener('resize', e => this.base.onResize(canvas));
     }
 
-    componentWillReceiveProps(props, nextProps) {
-        this.base.item = nextProps.item;
+    componentWillReceiveProps(props) {
+        if (this.props.item != props.item) {
+            this.base.item = props.item;
+        }
     }
 
     render() {

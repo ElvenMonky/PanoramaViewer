@@ -24,7 +24,7 @@ export class ThreeViewerBase {
     private initialized: boolean = false;
 
     set item(value: Panorama) {
-        this.url = `images/${value.src}`;
+        this.url = value ? `images/${value.src}` : null;
         this.updateSource();
     }
 

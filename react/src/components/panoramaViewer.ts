@@ -19,8 +19,8 @@ export default class PanoramaViewer extends React.Component<any, {}> {
             selectedItem: this.base.selectedItem,
             selectedItemChange: value => this.base.selectedItem = value,
             update: this.base.update
-        }
-    };
+        };
+    }
 
     render() {
         return React.createElement(Template, this.newProps);
