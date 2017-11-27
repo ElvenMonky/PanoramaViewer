@@ -11,10 +11,25 @@ export class DataAccessServiceBase {
         return this._panoramaApi;
     }
 
+    private convert(tag: string, key: string, ...args: any[]) {
+    }
+
+    private convertBody(tag: string, key: string, ...args: any[]) {
+        switch (tag) {
+            case "panorama":
+                switch (key) {
+                    case "add":
+                        return { requestBody: args[0] };
+                }
+        }
+    }
+
     private getApi(apis: any, tag: string): any {
         const api = Object.keys(apis[tag]).reduce((api, key) => {
             api[key] = (...args: any[]) => new Promise((resolve, reject) => {
-                apis[tag][key](args.length ? { body: args[0] } : undefined).then((x: any) => resolve(x.obj), (x: any) => reject(x));
+                const params = this.convert(tag, key, ...args);
+                const opts = this.convertBody(tag, key, ...args);
+                apis[tag][key](params, opts).then((x: any) => resolve(x.obj), (x: any) => reject(x));
             });
             return api;
         }, {});
