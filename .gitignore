@@ -72,3 +72,4 @@ typings/
 /nodejs/bin
 /react/bin
 /react/obj/Debug
+/client/bin
