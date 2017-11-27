@@ -71,3 +71,4 @@ typings/
 /nodejs/bin
 /angular/bin
 /react/bin
+/nodejs/obj/Debug
