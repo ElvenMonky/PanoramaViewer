@@ -19,7 +19,7 @@ export default class ThreeViewer extends React.Component<any, {}> {
     }
 
     componentWillReceiveProps(props) {
-        if (this.props.item != props.item) {
+        if (this.props.item !== props.item) {
             this.base.item = props.item;
         }
     }

@@ -57,7 +57,7 @@
 /******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
 /******/
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "/";
+/******/ 	__webpack_require__.p = "/PanoramaViewer/";
 /******/
 /******/ 	// Load entry module and return exports
 /******/ 	return __webpack_require__(__webpack_require__.s = 158);
@@ -7446,7 +7446,7 @@ class ThreeViewer extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
         window.addEventListener('resize', e => this.base.onResize(canvas));
     }
     componentWillReceiveProps(props) {
-        if (this.props.item != props.item) {
+        if (this.props.item !== props.item) {
             this.base.item = props.item;
         }
     }
@@ -73708,7 +73708,7 @@ const isLocalhost = Boolean(window.location.hostname === 'localhost' ||
 function register() {
     if ("production" === 'production' && 'serviceWorker' in navigator) {
         // The URL constructor is available in all browsers that support SW.
-        const publicUrl = new URL("", window.location.toString());
+        const publicUrl = new URL("/PanoramaViewer", window.location.toString());
         if (publicUrl.origin !== window.location.origin) {
             // Our service worker won't work if PUBLIC_URL is on a different origin
             // from what our page is served on. This might happen if a CDN is used to
@@ -73716,7 +73716,7 @@ function register() {
             return;
         }
         window.addEventListener('load', () => {
-            const swUrl = `${""}/service-worker.js`;
+            const swUrl = `${"/PanoramaViewer"}/service-worker.js`;
             if (!isLocalhost) {
                 // Is not local host. Just register service worker
                 registerValidSW(swUrl);
@@ -73793,4 +73793,4 @@ function unregister() {
 
 /***/ })
 /******/ ]);
-//# sourceMappingURL=main.03839429.js.map
+//# sourceMappingURL=main.js.map
