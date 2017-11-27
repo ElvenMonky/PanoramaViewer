@@ -16,9 +16,10 @@ export class PanoramaController implements PanoramaApi {
     }
 
     @Put("/")
-    add(@Req() request: any): Promise<void> {
-        return new Promise<void>((resolve, reject) => {
-            const fileName = `${PanoramaController.dirName}/${uuid()}.jpg`;
+    add(@Req() request: any): Promise<string> {
+        return new Promise<string>((resolve, reject) => {
+            const result = `${uuid()}.jpg`;
+            const fileName = `${PanoramaController.dirName}/${result}`;
             const stream = fs.createWriteStream(fileName);
             request
                 .on("error", e => {
@@ -29,7 +30,7 @@ export class PanoramaController implements PanoramaApi {
                     reject(e);
                 })
                 .on("close", () => {
-                    resolve();
+                    resolve(result);
                 });
         });
     }

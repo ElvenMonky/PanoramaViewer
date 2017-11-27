@@ -1,1 +1,0 @@
-C:\Home\Projects\PanoramaViewer\nodejs\obj\Debug\NodeJsServer.njsprojResolveAssemblyReference.cache

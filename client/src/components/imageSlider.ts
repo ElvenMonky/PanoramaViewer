@@ -6,7 +6,7 @@ export class ImageSliderBase {
     private startIndex: number = 0;
 
     public get visibleItems(): Panorama[] {
-        return this._items.slice(this.startIndex, this.startIndex + this.numItems).concat(new Panorama());
+        return this._items.slice(this.startIndex, this.startIndex + this.numItems);
     }
 
     public trackBy(index: number, item: Panorama): string {
@@ -14,16 +14,20 @@ export class ImageSliderBase {
     }
 
     set items(items: Panorama[]) {
-        this._items = items || [];
+        this._items = [new Panorama()].concat(items);
 
         if (this.startIndex + this.numItems > this._items.length) {
             this.startIndex = Math.max(0, this._items.length - this.numItems);
+            this.refresh();
         }
     }
 
     selectedItem: Panorama;
 
-    constructor(private selectedItemEmitChange: (value: Panorama) => void) { }
+    constructor(
+        private emitSelectedItem: (value: Panorama) => void,
+        private refresh = () => { }
+    ) { }
 
     get canMoveNext(): boolean {
         return this.startIndex + this.numItems < this._items.length;
@@ -37,6 +41,7 @@ export class ImageSliderBase {
         console.log('Move forward');
         if (this.canMoveNext) {
             this.startIndex++;
+            this.refresh();
         }
     }
 
@@ -44,18 +49,17 @@ export class ImageSliderBase {
         console.log('Move backward');
         if (this.canMoveBack) {
             this.startIndex--;
+            this.refresh();
         }
     }
 
     selectItem(item: Panorama): void {
         console.log('Select item');
-        this.selectedItem = item;
-        this.selectedItemEmitChange(this.selectedItem);
+        this.emitSelectedItem(this.selectedItem = item);
     }
 
     addItem(): void {
         console.log('Add item');
-        this.selectedItem = null;
-        this.selectedItemEmitChange(this.selectedItem);
+        this.emitSelectedItem(this.selectedItem = null);
     }
 }

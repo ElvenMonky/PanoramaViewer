@@ -7,11 +7,11 @@ button {
     flex: 0 0 4%;
 
     &:first-child::before {
-        content: "&lt;";
+        content: "<";
     }
 
     &:last-child::before {
-        content: "&gt;";
+        content: ">";
     }
 }
 
@@ -37,7 +37,7 @@ ul {
             height: 100%;
         }
 
-        &:last-child > button::before {
+        &:first-child > button::before {
             content: "+"
         }
     }

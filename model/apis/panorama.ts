@@ -2,5 +2,5 @@
 
 export interface PanoramaApi {
     getAll(): Promise<Panorama[]>;
-    add(imageData: any): Promise<void>;
+    add(imageData: any): Promise<string>;
 }

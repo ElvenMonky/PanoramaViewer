@@ -7,17 +7,17 @@
     flex: 0 0 4%;
 
     &:first-child::before {
-        content: "&lt;";
+        content: "<";
     }
 
     &:last-child::before {
-        content: "&gt;";
+        content: ">";
     }
 }
 
 .imageSlider, .imageSlider ul {
     display: flex;
-    align-items: stretch;
+    align-items: stretch !important;
     flex-direction: row;
 }
 
@@ -37,7 +37,7 @@
             height: 100%;
         }
 
-        &:last-child > button::before {
+        &:first-child > button::before {
             content: "+"
         }
     }

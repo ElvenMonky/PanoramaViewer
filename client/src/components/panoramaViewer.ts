@@ -14,7 +14,7 @@ export class PanoramaViewerBase {
 
     public set items(value: Panorama[]) {
         this._items = value;
-        this.emitChange();
+        this.refresh();
     }
 
     private _selectedItem: Panorama = null;
@@ -24,13 +24,16 @@ export class PanoramaViewerBase {
     }
 
     public set selectedItem(value: Panorama) {
-        this._selectedItem = value;
-        this.emitChange();
+        if (this._selectedItem !== value) {
+            this._selectedItem = value;
+            this.refresh();
+        }
     }
 
-    public emitChange = () => { };
-
-    constructor(dataAccessService: DataAccessServiceBase) {
+    constructor(
+        dataAccessService: DataAccessServiceBase,
+        private refresh = () => { }
+    ) {
         dataAccessService.panoramaApi.subscribe(panoramaApi => {
             this.panoramaApi = panoramaApi;
             this.selectedItem = null;
@@ -39,7 +42,7 @@ export class PanoramaViewerBase {
         });
     }
 
-    update() {
+    update(selectedSrc?: string) {
         if (!this.panoramaApi) {
             this.items = [];
             return;
@@ -49,12 +52,12 @@ export class PanoramaViewerBase {
             .then(items => {
                 console.log(`Items received: ${JSON.stringify(items)}`);
                 this.items = items;
-                this.selectedItem = this.items[0] ? this.items[0] : null;
+                this.selectedItem = this.items.find(x => x.src === selectedSrc) || (this.items[0] ? this.items[0] : null);
             })
             .catch(error => {
                 console.log(`Http error: ${error}`);
                 this.items = stubPanoramaData;
-                this.selectedItem = this.items[0] ? this.items[0] : null;
+                this.selectedItem = this.items.find(x => x.src === selectedSrc) || (this.items[0] ? this.items[0] : null);
             });
     }
 
@@ -67,7 +70,7 @@ export class PanoramaViewerBase {
                 console.log(reader.result);
                 console.log((<ArrayBuffer>reader.result).byteLength);
                 this.panoramaApi.add(reader.result)
-                    .then(() => this.update())
+                    .then(result => this.update(result))
             };
             reader.readAsArrayBuffer(file);
         }

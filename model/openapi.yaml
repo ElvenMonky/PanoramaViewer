@@ -38,8 +38,12 @@ paths:
               type: string
               format: binary
       responses:
-        '201':
-          description: Null response
+        '200':
+          description: New panorama file name
+          content:
+            application/json:    
+              schema:
+                type: string
         default:
           description: unexpected error
           content:
