@@ -1,6 +1,6 @@
 # PanoramaViewer
 
-Add, view and possibly compose panoramic images with either Angular or React web UI.
+Add, view and possibly compose panoramic images with either Angular or React web UI. The UI approach is similar to Xamarin's iOS/Android switch: both Angular and React bindings are thin and you can easily switch between them.
 
 Project created using Visual Studio 2017.
 
